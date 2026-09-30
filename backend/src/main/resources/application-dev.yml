@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/military_asset_mgmt?createDatabaseIfNotExist=true
+    username: root
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+logging:
+  level:
+    com.mams: DEBUG
+    org.springframework.security: INFO
+    org.flywaydb: INFO
+
+springdoc:
+  swagger-ui:
+    enabled: true
